@@ -58,6 +58,13 @@ const ACCENT_THEME_BY_PROFILE = {
     selectedIcon: 'text-blue-600',
     chip: 'bg-blue-100 text-blue-700',
   },
+  andy: {
+    selectedBg: 'bg-green-50',
+    selectedBorder: 'border-green-500',
+    selectedText: 'text-green-700',
+    selectedIcon: 'text-green-600',
+    chip: 'bg-green-100 text-green-700',
+  },
   emilie: {
     selectedBg: 'bg-pink-50',
     selectedBorder: 'border-pink-500',
@@ -401,9 +408,70 @@ const PLAN_EMILIE_CHEAT = [
   },
 ];
 
+
+const PROTEIN_OPTS_ANDY_M2 = makeProteinOptions({ poulet: 200, crevettes: 225, thon: 200, poissonBlanc: 240, saumon: 130, boeufMaigre: 160, tofu: 210 });
+const PROTEIN_OPTS_ANDY_NIGHT = makeProteinOptions({ poulet: 120, crevettes: 135, thon: 120, poissonBlanc: 145, saumon: 80, boeufMaigre: 95, tofu: 130 });
+const PROTEIN_OPTS_ANDY_M1R = makeProteinOptions({ poulet: 160, crevettes: 180, thon: 160, poissonBlanc: 190, saumon: 105, boeufMaigre: 130, tofu: 170 });
+
+const PLAN_ANDY_ENTRAINEMENT = [
+  { id:'andy-m1', name:'Meal 1 - Matin', icon:'🌅', color:'from-green-100 to-emerald-50', border:'border-green-200', items:[
+    { id:'pdt-a1', name:'Pomme de terre (cuite)', qty:'400 g', cal:340, p:6.0, g:72.0, l:1.6 },
+    { id:'poulet-a1', name:'Filet de poulet', qty:'120 g', cal:132, p:26.6, g:1.2, l:2.4, swappable:'protein', options:PROTEIN_OPTS_ANDY_NIGHT, optionId:'poulet' },
+    { id:'carottes-a1', name:'Carottes', qty:'350 g', cal:108.5, p:3.5, g:28.0, l:0 },
+    { id:'balsamique-a1', name:'Creme balsamique', qty:'20 g', cal:45.2, p:0.2, g:11.0, l:0.1 },
+    { id:'huile-a1', name:"Huile d'olive", qty:'10 g', cal:86.2, p:0.0, g:0.0, l:10.0 },
+  ]},
+  { id:'andy-m2', name:'Meal 2 - Midi', icon:'🍽️', color:'from-emerald-100 to-green-50', border:'border-emerald-200', items:[
+    { id:'poulet-a2', name:'Filet de poulet', qty:'200 g', cal:220, p:44.4, g:2.0, l:4.0, swappable:'protein', options:PROTEIN_OPTS_ANDY_M2, optionId:'poulet' },
+    { id:'pdt-a2', name:'Pomme de terre (cuite)', qty:'400 g', cal:340, p:6.0, g:72.0, l:1.6 },
+    { id:'carottes-a2', name:'Carottes', qty:'200 g', cal:62, p:2.0, g:16.0, l:0 },
+    { id:'tomates-a2', name:'Tomates', qty:'150 g', cal:30, p:1.5, g:6.75, l:0.45 },
+    { id:'salade-a2', name:'Salade sucrine', qty:'150 g', cal:22.5, p:1.5, g:4.5, l:0 },
+    { id:'balsamique-a2', name:'Creme balsamique', qty:'20 g', cal:45.2, p:0.2, g:11.0, l:0.1 },
+    { id:'huile-a2', name:"Huile d'olive", qty:'10 g', cal:86.2, p:0.0, g:0.0, l:10.0 },
+  ]},
+  { id:'andy-m3', name:'Meal 3 - Collation', icon:'🍫', color:'from-teal-50 to-green-50', border:'border-teal-200', items:[
+    { id:'banane-a3', name:'Banane', qty:'300 g', cal:267, p:3.0, g:69.0, l:0 },
+    { id:'blanc-oeuf-a3', name:"Blanc d'oeuf", qty:'2 pieces', cal:28, p:6.2, g:0.4, l:0 },
+    { id:'choco-a3', name:'Chocolat 70%', qty:'30 g', cal:171.6, p:2.7, g:9.0, l:12.0 },
+  ]},
+  { id:'andy-m4', name:'Meal 4 - Repas de Nuit', icon:'🌙', color:'from-green-50 to-teal-50', border:'border-green-200', items:[
+    { id:'pain-a4', name:"Pain complet style Harry's", qty:'160 g', cal:404.8, p:12.3, g:66.7, l:7.2 },
+    { id:'poulet-a4', name:'Filet de poulet', qty:'120 g', cal:132, p:26.6, g:1.2, l:2.4, swappable:'protein', options:PROTEIN_OPTS_ANDY_NIGHT, optionId:'poulet' },
+    { id:'tomates-a4', name:'Tomates', qty:'250 g', cal:50, p:2.5, g:11.25, l:0.75 },
+  ]},
+];
+
+const PLAN_ANDY_REPOS = [
+  { id:'andy-m1', name:'Meal 1 - Matin', icon:'🌅', color:'from-green-100 to-emerald-50', border:'border-green-200', items:[
+    { id:'pdt-a1', name:'Pomme de terre (cuite)', qty:'400 g', cal:340, p:6.0, g:72.0, l:1.6 },
+    { id:'poulet-a1', name:'Filet de poulet', qty:'160 g', cal:176, p:35.5, g:1.6, l:3.2, swappable:'protein', options:PROTEIN_OPTS_ANDY_M1R, optionId:'poulet' },
+    { id:'carottes-a1', name:'Carottes', qty:'200 g', cal:62, p:2.0, g:16.0, l:0 },
+    { id:'balsamique-a1', name:'Creme balsamique', qty:'20 g', cal:45.2, p:0.2, g:11.0, l:0.1 },
+    { id:'huile-a1', name:"Huile d'olive", qty:'10 g', cal:86.2, p:0.0, g:0.0, l:10.0 },
+  ]},
+  { id:'andy-m2', name:'Meal 2 - Midi', icon:'🍽️', color:'from-emerald-100 to-green-50', border:'border-emerald-200', items:[
+    { id:'poulet-a2', name:'Filet de poulet', qty:'200 g', cal:220, p:44.4, g:2.0, l:4.0, swappable:'protein', options:PROTEIN_OPTS_ANDY_M2, optionId:'poulet' },
+    { id:'pdt-a2', name:'Pomme de terre (cuite)', qty:'400 g', cal:340, p:6.0, g:72.0, l:1.6 },
+    { id:'carottes-a2', name:'Carottes', qty:'200 g', cal:62, p:2.0, g:16.0, l:0 },
+    { id:'tomates-a2', name:'Tomates', qty:'150 g', cal:30, p:1.5, g:6.75, l:0.45 },
+    { id:'salade-a2', name:'Salade sucrine', qty:'150 g', cal:22.5, p:1.5, g:4.5, l:0 },
+    { id:'balsamique-a2', name:'Creme balsamique', qty:'20 g', cal:45.2, p:0.2, g:11.0, l:0.1 },
+    { id:'huile-a2', name:"Huile d'olive", qty:'10 g', cal:86.2, p:0.0, g:0.0, l:10.0 },
+  ]},
+  { id:'andy-m3', name:'Meal 3 - Collation', icon:'🍎', color:'from-teal-50 to-green-50', border:'border-teal-200', items:[
+    { id:'fruit-a3', name:'Fruit au choix', qty:'300 g', cal:150, p:2.1, g:33.0, l:0.9 },
+    { id:'blanc-oeuf-a3', name:"Blanc d'oeuf", qty:'2 pieces', cal:28, p:6.2, g:0.4, l:0 },
+  ]},
+  { id:'andy-m4', name:'Meal 4 - Repas de Nuit', icon:'🌙', color:'from-green-50 to-teal-50', border:'border-green-200', items:[
+    { id:'pain-a4', name:"Pain complet style Harry's", qty:'160 g', cal:404.8, p:12.3, g:66.7, l:7.2 },
+    { id:'poulet-a4', name:'Filet de poulet', qty:'120 g', cal:132, p:26.6, g:1.2, l:2.4, swappable:'protein', options:PROTEIN_OPTS_ANDY_NIGHT, optionId:'poulet' },
+    { id:'tomates-a4', name:'Tomates', qty:'250 g', cal:50, p:2.5, g:11.25, l:0.75 },
+  ]},
+];
 // ===== PROFILS + MODES =====
 
-const PROFILES = ['luca', 'emilie'];
+const PROFILES = ['andy'];
 
 const MODES_BY_PROFILE = {
   luca: [
@@ -418,6 +486,10 @@ const MODES_BY_PROFILE = {
     { id: 'hard-sale',   label: 'Hard 🥪',  emoji: '🔥', desc: 'Training · Salé (pain + cottage + avocat)' },
     { id: 'cheat',       label: 'Cheat',    emoji: '🍕', desc: 'Cheat meal' },
   ],
+  andy: [
+    { id: 'entrainement', label: 'Training', emoji: '💪', desc: 'Jour entrainement (2571 kcal)' },
+    { id: 'repos',        label: 'Repos',    emoji: '🌿', desc: 'Jour de repos (2280 kcal)' },
+  ],
 };
 
 // Bases profil (mêmes infos pour tous les modes d'un profil)
@@ -428,6 +500,13 @@ const BASE_PROFILE = {
     accentGradient: 'from-violet-600 to-purple-600',
     accentRing: '#8b5cf6',
     profile: 'Luca, 70 kg / 1m70, athlète HYROX. Régime flexible (mange occasionnellement de la viande, pas strictement pesco-végétarien). Suit le plan The Genius (coach Andy).',
+  },
+  andy: {
+    name: 'Andy', avatar: '🦁',
+    accent: 'green',
+    accentGradient: 'from-green-600 to-emerald-600',
+    accentRing: '#16a34a',
+    profile: 'Andy, coach et athlete HYROX. 4 repas: matin (pomme de terre + poulet + carottes), midi (poulet + pomme de terre + legumes), collation, repas de nuit (pain + poulet + tomates).',
   },
   emilie: {
     name: 'Émilie', avatar: '👩',
@@ -447,6 +526,8 @@ const PLAN_BY_USER_ID = {
   'emilie-hard-sucre': PLAN_EMILIE_HARD_SUCRE,
   'emilie-hard-sale':  PLAN_EMILIE_HARD_SALE,
   'emilie-cheat':      PLAN_EMILIE_CHEAT,
+  'andy-entrainement': PLAN_ANDY_ENTRAINEMENT,
+  'andy-repos':        PLAN_ANDY_REPOS,
 };
 
 // USERS = chaque combo (profil, mode) est un user virtuel avec son propre plan et état.
@@ -481,7 +562,7 @@ function buildUsers() {
 const USERS = buildUsers();
 
 // Default mode quand on bascule entre profils
-const DEFAULT_MODE_BY_PROFILE = { luca: 'standard', emilie: 'hard-sucre' };
+const DEFAULT_MODE_BY_PROFILE = { andy: 'entrainement' };
 
 // ===== UTILS =====
 
@@ -1436,20 +1517,7 @@ Boissons:
 - Bière 5%: 43/0.5/3.5/0 (33cl ≈ 142kcal) · Vin rouge: 85/0/2.6/0 (15cl ≈ 128kcal)
 - Coca: 42/0/10.6/0 (33cl ≈ 139kcal) · Jus orange: 45/0.7/10/0.2
 
-REQUETES LIFESTYLE: repas plaisir/cheat day → proposer substituts gourmands (poulet→steak, sere→skyr+granola), auto_apply:false, sans demander clarification. MESSAGES VAGUES: toujours proposer qqch de concret meme si vague.
-
-PRIORITÉ: atteindre protéines totales > calories > glucides timing training`🎯 REQUÊTES LIFESTYLE (repas plaisir, cheat day, envies):
-Quand l'utilisateur demande des "repas plaisir", un "cheat day", ou exprime une envie générale SANS préciser d'aliment:
-- Ne pas demander de clarification — agir DIRECTEMENT
-- Proposer 2-3 modifications concrètes: remplacer items du plan par équivalents plus gourmands
-- Garder protéines proches de la cible, être flexible sur glucides/lipides
-- Substituts plaisir: poulet → steak/saumon, séré → skyr+granola, dattes → chocolat, féculents → pâtes
-- Toujours auto_apply: false pour ces propositions (l'utilisateur choisit)
-
-🔍 MESSAGES VAGUES SANS ALIMENT:
-Si le message est vague mais l'intention claire → faire hypothèses raisonnables et proposer quelque chose.
-Ne JAMAIS répondre UNIQUEMENT par demandes de clarification — toujours inclure au moins 1 proposition concrète.
-Si vraiment aucun contexte → demander l'aliment ET proposer quelque chose en attendant.;
+PRIORITÉ: atteindre protéines totales > calories > glucides timing training`;
 
       const userMsg = userQuestion ||
         "Analyse et propose les ajustements nécessaires pour atteindre les cibles.";
