@@ -1055,7 +1055,7 @@ const ModeSwitcher = ({ currentProfile, currentMode, onSelect }) => {
 // ===== APP =====
 
 export default function App() {
-  const [currentUserId, setCurrentUserId] = useState('luca-standard');
+  const [currentUserId, setCurrentUserId] = useState('andy-entrainement');
   // Map du dernier mode utilisé par profil pour préserver la sélection au switch profil
   const [lastModeByProfile, setLastModeByProfile] = useState(DEFAULT_MODE_BY_PROFILE);
   const [usersData, setUsersData] = useState(() => {
